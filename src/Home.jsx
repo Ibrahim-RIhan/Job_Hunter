@@ -1,9 +1,13 @@
 import React from 'react';
+import Navbar from './components/Navbar/Navbar';
+import { Outlet } from 'react-router-dom';
 
 const Home = () => {
     return (
-        <div>
-            <h1 className='text-orange-500'>hello world</h1>
+        <div className='container mx-auto mt-12 '>
+            <Navbar></Navbar>
+            <Outlet></Outlet>
+         
         </div>
     );
 };
