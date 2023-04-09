@@ -9,18 +9,25 @@ import {
 import Home from './Home';
 import Statistics from './components/Statistics/Statistics';
 import Applied_Jobs from './components/Applied_Jobs/Applied_Jobs';
+import LandingPage from './components/LandingPage/LandingPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
     children :[
+      {
+        path : "/",
+        element : <LandingPage></LandingPage>
+      
+      },
     
       {
         path : "/statistics",
         element : <Statistics></Statistics>
       
       },
+      
       {
         path : "/applied-jobs",
         element : <Applied_Jobs></Applied_Jobs>
