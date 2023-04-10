@@ -10,33 +10,39 @@ import Home from './Home';
 import Statistics from './components/Statistics/Statistics';
 import Applied_Jobs from './components/Applied_Jobs/Applied_Jobs';
 import LandingPage from './components/LandingPage/LandingPage';
+import JobDetails from './components/JobDetails/JobDetails';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
-    children :[
+    children: [
       {
-        path : "/",
-        element : <LandingPage></LandingPage>
-      
+        path: "/",
+        element: <LandingPage></LandingPage>
+
       },
-    
+
       {
-        path : "/statistics",
-        element : <Statistics></Statistics>
-      
+        path: "/statistics",
+        element: <Statistics></Statistics>,
+        loader: () => fetch('statisticsData.json')
+
       },
-      
+
       {
-        path : "/applied-jobs",
-        element : <Applied_Jobs></Applied_Jobs>
-      
+        path: "/applied-jobs",
+        element: <Applied_Jobs></Applied_Jobs>
+
       },
       {
-        path : "/blogs",
-        element : <Applied_Jobs></Applied_Jobs>,
-      
+        path: "/blogs",
+        element: <Applied_Jobs></Applied_Jobs>
+      },
+      {
+        path: "/jobDetails",
+        element: <JobDetails></JobDetails>
+
       },
     ]
   },

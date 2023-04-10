@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 
 const Home = () => {
     return (
-        <div className='container mx-auto mt-12 '>
+        <div className='container mx-auto mt-12  '>
             <Navbar></Navbar>
             <Outlet></Outlet>
           

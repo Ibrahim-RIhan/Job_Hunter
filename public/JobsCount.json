@@ -1,0 +1,22 @@
+[
+    {
+        "type" : "Account and Finance",
+        "available" : 300,
+        "img" : "../public/Catagory Icons/accounts 1.png"
+    },
+    {
+        "type" : "Creative Design",
+        "available" : 200,
+        "img" : "../public/Catagory Icons/social-media 1.png"
+    },
+    {
+        "type" : "Marketing and Sales",
+        "available" : 150,
+        "img" : "../public/Catagory Icons/business 1.png"
+    },
+    {
+        "type" : "Engineering Job",
+        "available" : 50,
+        "img" : "../public/Catagory Icons/chip 1.png"
+    }
+]
