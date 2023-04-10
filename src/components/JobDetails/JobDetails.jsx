@@ -17,6 +17,7 @@ const JobDetails = () => {
     }, [DetailsData, jobId])
     const applyBtnHandler = (jobId) => {
         addToDb(jobId)
+        
     }
     return (
         <div>

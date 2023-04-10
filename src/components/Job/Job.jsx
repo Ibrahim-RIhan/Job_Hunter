@@ -19,8 +19,8 @@ const Job = ({ job }) => {
                     <button className='btn-outline btn  btn-info '>{type2}</button>
                 </div>
                 <div className='flex gap-5 text-lg text-[#757575] font-medium my-3'>
-                    <p><FontAwesomeIcon icon={faLocationPin} />     {location}</p>
-                    <p><FontAwesomeIcon icon={faDollar} />   Salary {salary}</p>
+                    <p><FontAwesomeIcon className='fonticon' icon={faLocationPin} />     {location}</p>
+                    <p><FontAwesomeIcon className='fonticon' icon={faDollar} />   Salary {salary}</p>
                 </div>
                 <div className="card-actions">
                 <button className='rounded-lg px-5 py-4 text-white text-lg font-semibold  bg-[#7E90FE] '><Link to={`/jobDetails/${id}`}>View Details</Link> </button>
