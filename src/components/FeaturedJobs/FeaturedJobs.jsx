@@ -2,12 +2,19 @@ import React, { useEffect, useState } from 'react';
 import Job from '../Job/Job';
 
 const FeaturedJobs = () => {
-   const [jobs, setJobs] =useState([])
+    const [jobs, setJobs] = useState([])
+    const [numJobs, setNumJobs] = useState(4);
+    const jobsToShow = jobs.slice(0, numJobs);
+
+    const handleSeeAllClick = () => {
+        setNumJobs(jobs.length);
+    }
+
     useEffect(() => {
         fetch('JobsData.json')
             .then(res => res.json())
             .then(data => setJobs(data))
-    },[])
+    }, [])
     return (
         <div className='my-10 text-center'>
             <h1 className='text-5xl font-bold text-center'>Featured Jobs</h1>
@@ -15,13 +22,17 @@ const FeaturedJobs = () => {
             <div className='grid md:grid-cols-2  mt-20 gap-8 py-5 '>
 
                 {
-                    jobs.map(job => <Job
-                    key={job.id}
-                    job={job}
+                    jobsToShow.map(job => <Job
+                        key={job.id}
+                        job={job}
                     ></Job>)
                 }
             </div>
-            <button className='rounded-lg px-10 py-5 my-7  text-white text-lg font-semibold  bg-[#7E90FE] '>See all jobs </button>
+            {numJobs < jobs.length && (
+               
+                <button onClick={handleSeeAllClick}  className='rounded-lg px-10 py-5 my-7  text-white text-lg font-semibold  bg-[#7E90FE] '>See all jobs </button>
+            )}
+            
         </div>
     );
 };
