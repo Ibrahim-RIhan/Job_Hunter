@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './Home';
 import Statistics from './components/Statistics/Statistics';
+import Blogs from './components/Blogs/Blogs';
 import Applied_Jobs from './components/Applied_Jobs/Applied_Jobs';
 import LandingPage from './components/LandingPage/LandingPage';
 import JobDetails from './components/JobDetails/JobDetails';
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blogs",
-        element: <Applied_Jobs></Applied_Jobs>
+        element: <Blogs></Blogs>
       },
       {
         path: "/jobDetails",
