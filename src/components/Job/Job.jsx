@@ -5,10 +5,8 @@ import JobDetails from '../JobDetails/JobDetails';
 import { Link } from 'react-router-dom';
 
 const Job = ({ job }) => {
-    const btnDetailsHandle = (job) => {
-       <JobDetails jobData={job}></JobDetails>
-    }
-    const { img, location, jobTitle, salary, company, type1, type2 } = job;
+   
+    const { id, img, location, jobTitle, salary, company, type1, type2 } = job;
     return (
         <div className=" grid  items-center w-full bg-base-100 shadow">
             <figure className=" ">
@@ -26,7 +24,8 @@ const Job = ({ job }) => {
                     <p><FontAwesomeIcon icon={faDollar} />   Salary {salary}</p>
                 </div>
                 <div className="card-actions">
-                  <Link to="./jobDetails">  <button onClick={() => { btnDetailsHandle(job) }} className='rounded-lg px-5 py-4 text-white text-lg font-semibold  bg-[#7E90FE] '>View Details </button></Link>
+                <button className='rounded-lg px-5 py-4 text-white text-lg font-semibold  bg-[#7E90FE] '><Link to={`/jobDetails/${id}`}>View Details</Link> </button>
+                  
                 </div>
             </div>
         </div>
