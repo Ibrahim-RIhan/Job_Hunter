@@ -50,7 +50,7 @@ const JobDetails = () => {
                         <p className='my-3 text-[#757575] text-lg'><FontAwesomeIcon className='fonticon' icon={faLocationPin} />
                             <span className='text-lg  font-bold text-black'> Address : </span>{jobDetails.address}</p>
                     </div>
-                    <button onClick={() => { applyBtnHandler(jobId) }} className='rounded-lg px-10 py-5 my-7 w-full  text-white text-lg font-semibold  bg-[#7E90FE] '>APPLY NOW</button>
+                    <button onClick={() => applyBtnHandler(jobId) } className='rounded-lg px-10 py-5 my-7 w-full  text-white text-lg font-semibold  bg-[#7E90FE] '>APPLY NOW</button>
                 </div>
             </section>
 
