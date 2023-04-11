@@ -24,12 +24,12 @@ const Applied_Jobs = () => {
 
     return (
         <div>
-            <header className='details-header md:flex justify-between items-center'>
+            <header className='details-header md:flex justify-between mb-16 items-center'>
                 <img src={vector1} alt="" />
                 <h1 className='text-center text-3xl font-bold'>AppliedJobs</h1>
                 <img src={vector2} alt="" />
             </header>
-            <div className='w-96'>
+            <div className='mb-10 mx-auto'>
             {
                 cart.map(job => <AppliedJobsPage
                     key={job.id}
