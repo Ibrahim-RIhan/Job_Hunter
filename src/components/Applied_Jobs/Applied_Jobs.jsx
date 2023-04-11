@@ -6,23 +6,27 @@ import vector1 from '../../assets/All Images/Vector.png'
 import vector2 from '../../assets/All Images/Vector-1.png'
 
 const Applied_Jobs = () => {
+    
     const [jobs, setJobs] = useState([]);
     const [filteredJobs, setFilteredJobs] = useState([]);
-    let newArray = [];
-    const storageData = getShoppingCart()
-    const JobsData = useLoaderData()
 
+
+    const JobsData = useLoaderData()
     useEffect(() => {
+        let newArray = [];
+        const storageData = getShoppingCart()
+
         for (const id in storageData) {
             const appliedJobs = JobsData.find(job => job.id === id);
             if (appliedJobs) {
-                newArray.push(appliedJobs);
+             newArray.push(appliedJobs);
             }
         }
+
         setJobs(newArray)
         setFilteredJobs(newArray)
     }, [])
-    
+
 
 
     const remoteButtonHandler = () => {
@@ -30,16 +34,9 @@ const Applied_Jobs = () => {
         setJobs(filteredData)
     }
     const onSiteButtonHandler = () => {
-
-        const filteredData = JobsData.filter((jobs) => jobs.type1 === 'Onsite');
+        const filteredData = filteredJobs.filter((jobs) => jobs.type1 === 'Onsite');
         setJobs(filteredData)
     }
-
-
-
-
-
-
 
     return (
         <div>
@@ -58,7 +55,6 @@ const Applied_Jobs = () => {
                     jobs.map(job => <AppliedJobsPage
                         key={job.id}
                         appliedJobs={job}
-
                     ></AppliedJobsPage>)
                 }
             </div>
