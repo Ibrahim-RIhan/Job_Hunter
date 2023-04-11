@@ -6,19 +6,38 @@ import vector1 from '../../assets/All Images/Vector.png'
 import vector2 from '../../assets/All Images/Vector-1.png'
 
 const Applied_Jobs = () => {
-    const [cart, setCart] = useState([])
-    const loaderData = useLoaderData()
+    const [jobs, setJobs] = useState([]);
+    const [filteredJobs, setFilteredJobs] = useState([]);
+    let newArray = [];
+    const storageData = getShoppingCart()
+    const JobsData = useLoaderData()
+
     useEffect(() => {
-        let newArray = []
-        const storageData = getShoppingCart()
         for (const id in storageData) {
-            const appliedJobs = loaderData.find(job => job.id === id)
+            const appliedJobs = JobsData.find(job => job.id === id);
             if (appliedJobs) {
-                newArray.push(appliedJobs)
+                newArray.push(appliedJobs);
             }
-            setCart(newArray)
         }
+        setJobs(newArray)
+        setFilteredJobs(newArray)
     }, [])
+    
+
+
+    const remoteButtonHandler = () => {
+        const filteredData = filteredJobs.filter((jobs) => jobs.type1 === 'Remote');
+        setJobs(filteredData)
+    }
+    const onSiteButtonHandler = () => {
+
+        const filteredData = JobsData.filter((jobs) => jobs.type1 === 'Onsite');
+        setJobs(filteredData)
+    }
+
+
+
+
 
 
 
@@ -29,17 +48,23 @@ const Applied_Jobs = () => {
                 <h1 className='text-center text-3xl font-bold'>AppliedJobs</h1>
                 <img src={vector2} alt="" />
             </header>
-            <div className='mb-10 mx-auto'>
-            {
-                cart.map(job => <AppliedJobsPage
-                    key={job.id}
-                    appliedJobs={job}
+            <div className=' flex gap-5 absolute end-10 '>
+                <button onClick={() => { remoteButtonHandler() }} className="btn btn-outline btn-error relative">Remote</button>
+                <button onClick={() => { onSiteButtonHandler() }} className="btn btn-outline btn-error relative">Onsite</button>
+            </div>
 
-                ></AppliedJobsPage>)
-            }
+            <div className=''>
+                {
+                    jobs.map(job => <AppliedJobsPage
+                        key={job.id}
+                        appliedJobs={job}
+
+                    ></AppliedJobsPage>)
+                }
             </div>
         </div>
-    );
+    )
 };
+
 
 export default Applied_Jobs;

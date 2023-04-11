@@ -12,15 +12,19 @@ import Blogs from './components/Blogs/Blogs';
 import Applied_Jobs from './components/Applied_Jobs/Applied_Jobs';
 import LandingPage from './components/LandingPage/LandingPage';
 import JobDetails from './components/JobDetails/JobDetails';
+import ErrorPage from './ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+   
+    
     children: [
       {
         path: "/",
-        element: <LandingPage></LandingPage>
+        element: <LandingPage></LandingPage>,
+
 
       },
 
@@ -47,8 +51,13 @@ const router = createBrowserRouter([
         loader: ({params}) => fetch('/JobsData.json')
 
       },
+   
     ]
   },
+  {
+    path : '/*',
+    element : <ErrorPage></ErrorPage>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

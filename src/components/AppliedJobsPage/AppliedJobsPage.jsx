@@ -7,9 +7,9 @@ import { faDollar, faLocationPin } from '@fortawesome/free-solid-svg-icons'
 const AppliedJobsPage = ({ appliedJobs }) => {
     const { id, img, jobTitle, company, type1, type2, salary, location } = appliedJobs
     return (
-        <div className='md:flex items-center justify-evenly w-auto mb-10 ms-7 overflow-x-hidden'>
+        <div className='md:flex items-center justify-evenly w-auto mb-20 mt-20 ms-7 overflow-x-hidden shadow'>
             <div className='md:flex items-center  gap-10'>
-                <img className='w-1/5' src={img} alt="" />
+                <img className='w-1/5 p-5 shadow' src={img} alt="" />
                 <div>
                     <h3 className='text-2xl font-bold my-3 '>{jobTitle}</h3>
                     <p className='font-medium text-lg my-3 text-[#757575]'>{company}</p>
